@@ -8,7 +8,7 @@ public class ConnectionFactory {
 
     private ConnectionFactory(){}
 
-    public Connection getConnection(){
+    public static Connection getConnection(){
 
         try {
             DriverManager.getConnection("jdbc:postgresql://localhost/DespesasDB", "postgres", "142536");
