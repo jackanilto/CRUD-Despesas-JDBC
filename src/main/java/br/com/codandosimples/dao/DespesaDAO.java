@@ -52,7 +52,7 @@ public class DespesaDAO implements IDespesaDAO {
 
     @Override
     public List<Despesa> findAll() {
-
+        String sql ="SELECT id, descricao, data, valor, categoria FROM Despesas";
         return null;
     }
 

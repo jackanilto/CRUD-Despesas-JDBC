@@ -17,12 +17,10 @@ public class Application {
         despesa.setCategoria(Categoria.SAUDE);
         despesa.setValor(659.51);
         despesa.setData(LocalDate.of(2022, 8, 14));
-
+        // Recuperando o ID da despesa inserida no BD
         Despesa despesaInserida = dao.save(despesa);
         System.out.println("A despesa foi inserida com ID: "+ despesaInserida.getId());
 
     }
-// parei no minuto 15:50
-    //https://youtu.be/CErX0MgvJ38?list=PL1lueKDtZ3Dcxc7kNKXr2BnXgSkccP0FG&t=957
 
 }
