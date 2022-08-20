@@ -5,9 +5,7 @@ import br.com.codandosimples.model.Categoria;
 import br.com.codandosimples.model.Despesa;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,13 +18,19 @@ public class DespesaDAO implements IDespesaDAO {
         try (Connection connection = ConnectionFactory.getConnection()) {
             String sql = "INSERT INTO Despesas (descricao, valor, data, categoria) VALUES (?, ?, ?, ?)";
 
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, despesa.getDescricao());
             preparedStatement.setDouble(2, despesa.getValor());
             preparedStatement.setDate(3, java.sql.Date.valueOf(despesa.getData()));
             preparedStatement.setString(4, despesa.getCategoria().toString());
 
             preparedStatement.executeUpdate();
+
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            resultSet.next();
+
+            Long generatedId = resultSet.getLong("id");
+            despesa.setId(generatedId);
 
 
         } catch (SQLException ex) {
