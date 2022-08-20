@@ -13,12 +13,13 @@ public class Application {
         DespesaDAO dao = new DespesaDAO();
 
         Despesa despesa = new Despesa();
-        despesa.setDescricao("Pagamento do Aluguel");
-        despesa.setCategoria(Categoria.MORADIA);
-        despesa.setValor(1200);
-        despesa.setData(LocalDate.of(2022, 8, 19));
+        despesa.setDescricao("Combustivel");
+        despesa.setCategoria(Categoria.TRANSPORTE);
+        despesa.setValor(150);
+        despesa.setData(LocalDate.of(2022, 8, 20));
 
-        dao.save(despesa);
+        Despesa despesaInserida = dao.save(despesa);
+        System.out.println("A despesa foi inserida com ID: "+ despesaInserida.getId());
 
     }
 // parei no minuto 15:50
