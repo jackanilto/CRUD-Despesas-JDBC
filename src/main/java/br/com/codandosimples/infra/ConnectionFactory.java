@@ -9,14 +9,11 @@ public class ConnectionFactory {
     private ConnectionFactory(){}
 
     public static Connection getConnection(){
-
         try {
-            DriverManager.getConnection("jdbc:postgresql://localhost/DespesasDB", "postgres", "142536");
-        } catch (SQLException e) {
+            return DriverManager.getConnection("jdbc:postgresql://localhost/DespesasDB", "postgres", "142536");
+        } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
+
     }
-
-
-
 }

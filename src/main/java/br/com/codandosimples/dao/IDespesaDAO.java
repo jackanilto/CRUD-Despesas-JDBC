@@ -3,6 +3,7 @@ package br.com.codandosimples.dao;
 import br.com.codandosimples.model.Categoria;
 import br.com.codandosimples.model.Despesa;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface IDespesaDAO {

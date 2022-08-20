@@ -6,12 +6,8 @@ public class Despesa {
     private Long id;
     private String descricao;
     private LocalDate data;
-    private double valor;
+    private Double valor;
     private Categoria categoria;
-
-    public Long getId() {
-        return id;
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -47,5 +43,9 @@ public class Despesa {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
