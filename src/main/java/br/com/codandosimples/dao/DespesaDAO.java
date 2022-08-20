@@ -6,6 +6,8 @@ import br.com.codandosimples.model.Despesa;
 
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,7 +55,31 @@ public class DespesaDAO implements IDespesaDAO {
     @Override
     public List<Despesa> findAll() {
         String sql ="SELECT id, descricao, data, valor, categoria FROM Despesas";
-        return null;
+
+        List<Despesa> despesas = new ArrayList<>();
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+               Long id = rs.getLong("id");
+               String descricao = rs.getString("descricao");
+               LocalDate data = rs.getDate("data").toLocalDate();
+               double valor = rs.getDouble("valor");
+               Categoria categoria = Categoria.valueOf(rs.getString("categoria"));
+               // Instancia uma nova despesa
+               Despesa despesa = new Despesa(id, descricao, data, valor, categoria);
+               despesas.add(despesa);
+
+
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+
+        }
+        return despesas;
     }
 
     @Override

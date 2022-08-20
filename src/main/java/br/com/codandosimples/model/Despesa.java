@@ -9,6 +9,14 @@ public class Despesa {
     private Double valor;
     private Categoria categoria;
 
+    public Despesa(Long id, String descricao, LocalDate data, Double valor, Categoria categoria) {
+        this.id = id;
+        this.descricao = descricao;
+        this.data = data;
+        this.valor = valor;
+        this.categoria = categoria;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
