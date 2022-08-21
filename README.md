@@ -3,12 +3,12 @@ Projeto do Sitema de controle de despesas feito utilizando Intelij Idea, Java co
 <br>
 ## Categorias:
     ALIMENTACAO
-    EDUCACAO,<br>
-    SAUDE,<br>
-    TRANSPORTE,<br>
-    MORADIA,<br>
-    OUTROS<br> 
-    Projeto em desenvolvimento... Aguardem mais irformações! :+1:
+    EDUCACAO
+    SAUDE
+    TRANSPORTE
+    MORADIA
+    OUTROS 
+    Projeto em desenvolvimento... Aguardem mais irformações! 
     
    
    <p align="center">
