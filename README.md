@@ -1,8 +1,8 @@
 # CRUD com JDBC <br>
 Projeto do Sitema de controle de despesas feito utilizando Intelij Idea, Java com JDBC, foi criada uma estrutura simples para estudo.
 <br>
-## Categorias: <br>
-    ALIMENTACAO,<br>
+## Categorias:
+    ALIMENTACAO
     EDUCACAO,<br>
     SAUDE,<br>
     TRANSPORTE,<br>
