@@ -18,6 +18,7 @@ public class Application {
             System.out.println("ID: "+ despesa.getId());
             System.out.println("Descricao: "+ despesa.getDescricao());
             System.out.println("Valor: "+ despesa.getValor());
+            System.out.println("=================================================");
         }
 
 

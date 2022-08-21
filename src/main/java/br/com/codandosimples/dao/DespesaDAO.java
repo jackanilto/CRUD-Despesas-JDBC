@@ -85,6 +85,8 @@ public class DespesaDAO implements IDespesaDAO {
     @Override
     public Optional<Despesa> findById(Long id) {
 
+        //https://youtu.be/ESOQHLiuY0Y?list=PL1lueKDtZ3Dcxc7kNKXr2BnXgSkccP0FG&t=480
+
         return Optional.empty();
     }
 
