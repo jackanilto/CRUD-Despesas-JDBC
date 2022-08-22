@@ -86,21 +86,21 @@ public class DespesaDAO implements IDespesaDAO {
     public Optional<Despesa> findById(Long id) {
         String sql ="SELECT id, descricao, data, valor, categoria FROM Despesas WHERE ID = ?";
 
+        Despesa despesa = null;
         try (Connection connection = ConnectionFactory.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            PreparedStatement.setLong(1, id);
+            preparedStatement.setLong(1, id);
 
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                Long id = rs.getLong("id");
+                Long pKey = rs.getLong("id");
                 String descricao = rs.getString("descricao");
                 LocalDate data = rs.getDate("data").toLocalDate();
                 double valor = rs.getDouble("valor");
                 Categoria categoria = Categoria.valueOf(rs.getString("categoria"));
 
-                Despesa despesa = new Despesa(id, descricao, data, valor, categoria);
-                despesas.add(despesa);
+                despesa = new Despesa(id, descricao, data, valor, categoria);
 
 
             }
@@ -108,7 +108,7 @@ public class DespesaDAO implements IDespesaDAO {
             throw new RuntimeException(ex);
 
         }
-        return despesas;
+        return Optional.ofNullable(despesa);
     }
 
     @Override
