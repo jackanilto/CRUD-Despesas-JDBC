@@ -22,12 +22,20 @@ public class Application {
 //            System.out.println("=================================================");
 //        }
 
-        Optional<Despesa> despesaOptional = dao.findById(3L);
-        despesaOptional.ifPresent(despesa -> {
+//       Optional<Despesa> despesaOptional = dao.findById(3L);
+//       despesaOptional.ifPresent(despesa -> {
+//           System.out.println("ID: "+ despesa.getId());
+//           System.out.println("Descricao: "+ despesa.getDescricao());
+//           System.out.println("Valor: "+ despesa.getValor());
+//       });
+
+          List<Despesa> despesas = dao.findByCategoria(Categoria.TRANSPORTE);
+          for (Despesa despesa : despesas){
             System.out.println("ID: "+ despesa.getId());
             System.out.println("Descricao: "+ despesa.getDescricao());
+            System.out.println("Categoria: " +despesa.getCategoria());
             System.out.println("Valor: "+ despesa.getValor());
-        });
+        };
 
 
         //ESTE BLOCO DE CODIGO, INSERE UMA NOVA DESPESA TESTE
