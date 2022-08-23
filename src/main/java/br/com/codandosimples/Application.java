@@ -13,21 +13,7 @@ public class Application {
     public static void main(String[] args) {
 
         DespesaDAO dao = new DespesaDAO();
-//        List<Despesa> despesas = dao.findAll();
-//
-//        for (Despesa despesa : despesas) {
-//            System.out.println("ID: "+ despesa.getId());
-//            System.out.println("Descricao: "+ despesa.getDescricao());
-//            System.out.println("Valor: "+ despesa.getValor());
-//            System.out.println("=================================================");
-//        }
 
-//       Optional<Despesa> despesaOptional = dao.findById(3L);
-//       despesaOptional.ifPresent(despesa -> {
-//           System.out.println("ID: "+ despesa.getId());
-//           System.out.println("Descricao: "+ despesa.getDescricao());
-//           System.out.println("Valor: "+ despesa.getValor());
-//       });
 
           List<Despesa> despesas = dao.findByCategoria(Categoria.TRANSPORTE);
           for (Despesa despesa : despesas){
@@ -37,6 +23,21 @@ public class Application {
             System.out.println("Valor: "+ despesa.getValor());
         };
 
+//        List<Despesa> despesas = dao.findAll();
+//
+//        for (Despesa despesa : despesas) {
+//            System.out.println("ID: "+ despesa.getId());
+//            System.out.println("Descricao: "+ despesa.getDescricao());
+//            System.out.println("Valor: "+ despesa.getValor());
+//            System.out.println("==============================================");
+//        }
+
+//       Optional<Despesa> despesaOptional = dao.findById(3L);
+//       despesaOptional.ifPresent(despesa -> {
+//           System.out.println("ID: "+ despesa.getId());
+//           System.out.println("Descricao: "+ despesa.getDescricao());
+//           System.out.println("Valor: "+ despesa.getValor());
+//       });
 
         //ESTE BLOCO DE CODIGO, INSERE UMA NOVA DESPESA TESTE
  //       Despesa despesa = new Despesa();
