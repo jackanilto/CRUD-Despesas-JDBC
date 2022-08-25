@@ -4,11 +4,9 @@ import br.com.codandosimples.dao.DespesaDAO;
 import br.com.codandosimples.model.Categoria;
 import br.com.codandosimples.model.Despesa;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
-public class Application {
+public class ListarDespesas {
 
     public static void main(String[] args) {
 
