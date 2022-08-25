@@ -62,17 +62,26 @@ public class DespesaDAO implements IDespesaDAO {
         }
         return despesa;
     }
-
     @Override
     public void delete(Long id) {
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            String sql = "DELETE FROM Depesas WHERE id = ?";
 
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setLong(1, id);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
     public List<Despesa> findAll() {
         String sql ="SELECT id, descricao, data, valor, categoria FROM Despesas";
 
-        List<Despesa> despesas = new ArrayList<>();
+        List<Despesa> despesa = new ArrayList<>();
 
         try (Connection connection = ConnectionFactory.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
