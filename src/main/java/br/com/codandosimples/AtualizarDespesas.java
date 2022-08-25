@@ -19,12 +19,12 @@ public class AtualizarDespesas {
         System.out.println(despesa.getValor());
         System.out.println(despesa.getCategoria());
 
-        despesa.setDescricao("Dentista");
-        despesa.setData(LocalDate.of(2022, 8, 24));
-        despesa.setValor(235.65);
-        despesa.setCategoria(Categoria.OUTROS);
-
-        dao.update(despesa);
+//        despesa.setDescricao("Dentista");
+//        despesa.setData(LocalDate.of(2022, 8, 24));
+//        despesa.setValor(235.65);
+//        despesa.setCategoria(Categoria.OUTROS);
+//
+//        dao.update(despesa);
 
     }
 
