@@ -81,8 +81,9 @@ public class DespesaDAO implements IDespesaDAO {
     public List<Despesa> findAll() {
         String sql ="SELECT id, descricao, data, valor, categoria FROM Despesas";
 
-        List<Despesa> despesa = new ArrayList<>();
+        List<Despesa> despesas = new ArrayList<>();
 
+      //  List<Despesa> despesas;
         try (Connection connection = ConnectionFactory.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
