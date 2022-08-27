@@ -97,7 +97,7 @@ public class DespesaDAO implements IDespesaDAO {
                double valor = rs.getDouble("valor");
                Categoria categoria = Categoria.valueOf(rs.getString("categoria"));
                // Instancia uma nova despesa
-               Despesa despesa = new Despesa(id, descricao, data, valor, categoria);
+               Despesa despesa = new Despesa();
                despesas.add(despesa);
 
 
@@ -127,7 +127,7 @@ public class DespesaDAO implements IDespesaDAO {
                 double valor = rs.getDouble("valor");
                 Categoria categoria = Categoria.valueOf(rs.getString("categoria"));
 
-                despesa = new Despesa(id, descricao, data, valor, categoria);
+                despesa = new Despesa();
 
 
             }
@@ -157,7 +157,7 @@ public class DespesaDAO implements IDespesaDAO {
                 double valor = rs.getDouble("valor");
                 Categoria cat = Categoria.valueOf(rs.getString("categoria"));
                 // Instancia uma nova despesa
-                Despesa despesa = new Despesa(id, descricao, data, valor, cat);
+                Despesa despesa = new Despesa();
                 despesas.add(despesa);
 
 

@@ -9,7 +9,7 @@ public class Despesa {
     private Double valor;
     private Categoria categoria;
 
-    public Despesa(Long id, String descricao, LocalDate data, Double valor, Categoria categoria) {
+    public Despesa() {
         this.id = id;
         this.descricao = descricao;
         this.data = data;
